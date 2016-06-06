@@ -1,0 +1,36 @@
+    <%= form_for @hole do |f| %>
+      <% if @hole.errors.any? %>
+        <div>
+          <%= pluralize(@hole.errors.count, "error") %> prevented this hole from being submitted:
+          <ul>
+            <% @hole.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div>
+        <%= f.label :ID %><br>
+        <%= f.text_field :ID %>
+      </div>
+      <div>
+        <%= f.label :date %><br>
+        <%= f.date_field :date %>
+      </div>
+      <div>
+        <%= f.label :lat %><br>
+        <%= f.number_field :lat, :step => 'any' %>
+        
+      </div>
+      <div>
+        <%= f.label :lng %><br>
+        <%= f.number_field :lng, :step => 'any' %>
+      </div>
+      <div>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </div>
+      <div>
+        <%= f.submit "Submit" %> 
+      </div>
+    <% end %>

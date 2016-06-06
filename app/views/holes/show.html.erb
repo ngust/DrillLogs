@@ -1,0 +1,57 @@
+<div class="container">
+    <%= link_to "Back to all holes", holes_path %><br/>
+    <div id='map'></div>
+
+    <%= javascript_tag do %>
+      lat = '<%= @hole.lat %>';
+      lng = '<%= @hole.lng %>';
+    <% end %>
+
+    <h2>Hole: <%= link_to @hole.ID, hole_path(@hole) %></h2>
+      <h3>Drilled on: <%= formatted_date(@hole.date) %></h3>
+      <p><%= @hole.description %></p>
+      <p>Coordinates: <%= @hole.lat %>, <%= @hole.lng %></p>
+      <div class="row">
+        <h3> Drill Log </h3>
+        <div class = "table-responsive col-md-4">
+          <table class = "table table-hover">
+            <tr>
+              <th>From (ft)</th>
+              <th>To (ft)</th>
+              <th># of Pails</th>
+              <th>Type of Rock</th>
+            </tr>
+            <% @hole.drill_logs.each do |drill_log| %>
+              <tr>
+                <td><%= drill_log.from %></td>
+                <td><%= drill_log.to %></td>
+                <td><%= drill_log.num_pails %></td>
+                <td><%= drill_log.rock_type %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <p><%= link_to "Write a drill_log!", new_hole_drill_log_path(@hole) %></p>
+
+      <div class="row">
+        <h3> Sample Log </h3>
+        <div class = "table-responsive col-md-4">
+          <table class = "table table-hover">
+            <tr>
+              <th>From (ft)</th>
+              <th>To (ft)</th>
+              <th>Type of Rock</th>
+            </tr>
+            <% @hole.samples.each do |sample| %>
+              <tr>
+                <td><%= sample.from %></td>
+                <td><%= sample.to %></td>
+                <td><%= sample.rock_type %></td>
+              </tr>
+            <% end %>
+          </table>
+                <p><%= link_to "Write a sample log!", new_hole_sample_path(@hole) %></p>
+        </div>
+      </div>
+</div>

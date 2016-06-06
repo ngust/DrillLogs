@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ID: MyString
+  date: 2016-04-07 23:01:01
+  lat: 9.99
+  lng: 9.99
+
+two:
+  ID: MyString
+  date: 2016-04-07 23:01:01
+  lat: 9.99
+  lng: 9.99

@@ -1,0 +1,28 @@
+// Place all the styles related to the holes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map {
+  height: 600px;
+  width:600px;
+  margin-top: 5px;
+  float: right;
+}
+
+.background-image-home {
+  background-image: url(/assets/HayesDrill.jpg);
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  /*filter: brightness(50%);*/
+}
+
+.jumbotron {
+  margin-top: 100px;
+   background: rgba(255, 255, 255, 0.4); 
+}

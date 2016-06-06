@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DrillLogs</title>
+<!--   <link rel='stylesheet', href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css'/> -->
+   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<!--   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'/> -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

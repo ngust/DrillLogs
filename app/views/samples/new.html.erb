@@ -1,0 +1,42 @@
+    <%= link_to "Back to hole", hole_path(@hole) %><br/>
+
+    <h2>Write a sample for <em><%= @hole.ID %></em>.</h2>
+
+    <%= form_for([@hole, @sample]) do |f| %>
+      <% if @sample.errors.any? %>
+        <div>
+          <%= pluralize(@sample.errors.count, "error") %> prevented the sample from being saved:
+          <ul>
+            <% @sample.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :from %><br>
+        <%= f.number_field :from  %>
+      </div>
+      <div>
+        <%= f.label :to %><br>
+        <%= f.number_field :to  %>
+      </div>
+      <div>
+        <%= f.label :rock_type %><br>
+        <%= f.text_field :rock_type %>
+      </div>
+      <div>
+        <%= f.label :discharge %><br>
+        <%= f.number_field :discharge %>
+      </div>
+      <div>
+        <%= f.label :gold %><br>
+        <%= f.text_field :gold %>
+      </div>
+      <div>
+        <%= f.label :notes %><br>
+        <%= f.text_field :notes %>
+      </div>
+      <div><%= f.submit "Submit" %></div>
+    <% end %>

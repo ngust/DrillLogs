@@ -1,0 +1,34 @@
+    <%= link_to "Back to hole", hole_path(@hole) %><br/>
+
+    <h2>Write a drill_log for <em><%= @hole.ID %></em>.</h2>
+
+    <%= form_for([@hole, @drill_log]) do |f| %>
+      <% if @drill_log.errors.any? %>
+        <div>
+          <%= pluralize(@drill_log.errors.count, "error") %> prevented the drill_log from being saved:
+          <ul>
+            <% @drill_log.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :from %><br>
+        <%= f.number_field :from  %>
+      </div>
+      <div>
+        <%= f.label :to %><br>
+        <%= f.number_field :to  %>
+      </div>
+      <div>
+        <%= f.label :num_pails %><br>
+        <%= f.number_field :num_pails  %>
+      </div>
+      <div>
+        <%= f.label :rock_type %><br>
+        <%= f.text_field :rock_type %>
+      </div>
+      <div><%= f.submit "Submit" %></div>
+    <% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hole_id: 
+  from: 1
+  to: 1
+  num_pails: 1
+  rock_type: MyText
+
+two:
+  hole_id: 
+  from: 1
+  to: 1
+  num_pails: 1
+  rock_type: MyText

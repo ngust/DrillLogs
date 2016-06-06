@@ -1,0 +1,30 @@
+<div class="col-sm-12 background-image-home"> 
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row row-centered">
+       <h1>Hayes Creek Drilling 2016</h1>
+        <div>
+        <p>
+          This is the drill logs site</p>
+          <p><a class="btn btn-primary btn-lg" href="new_hole_path" role="button">Add a hole!</a>
+          <select name="city_id" id="city_id">
+            <% holes_array = @holes.map { |city| [city.ID, city.lat] } %>
+            <%= options_for_select(holes_array) %>
+          </select>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <hr>
+    <% @holes.each do |hole| %>
+      <h2>Hole: <%= link_to hole.ID, hole_path(hole) %></h2>
+      <h3>Drilled on: <%= formatted_date(hole.date) %></h3>
+      <p><%= hole.description %></p>
+      <p>Coordinates: <%= hole.lat %>, <%= hole.lng %></p>
+      <hr>
+
+      <%= form_tag holes_path, multipart: true do %>
+<% end %>
+    <% end %>
